@@ -49,3 +49,20 @@ p {
 
 
 /** CODIGO AQUI **/
+@media(min-width: 768px){
+    .contenedor-grid{
+        display: grid;
+        grid-template-areas: "izq cont der";
+        grid-template-columns: 20% 60% 20%;
+        column-gap: 2rem;
+        grid-auto-flow: column;
+    }
+    .contenido-principal{
+        grid-area: cont;
+        /* grid-column: 2/3; */
+    }
+    .sidebar-2{
+        grid-area: izq;
+        /* grid-column: 1/2; */
+    }
+}

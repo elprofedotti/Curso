@@ -23,11 +23,15 @@ function css(done){
     done();//callback q avisa a gulp q llegamos al final
 }
 //imagenes
+const cache= require('gulp-cache');
 const imagemin=require('gulp-imagemin');
 const webp=require('gulp-webp');
 function imagenes( done){
+    const opciones={
+        quality: 50
+    };
     src('src/img/**/*.{png,jpg}')
-        .pipe(
+        .pipe( cache(imagemin()))
     done();
 }
 function versionWebp( done){

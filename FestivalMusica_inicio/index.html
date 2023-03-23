@@ -8,8 +8,45 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="build/css/app.css">
 </head>
 <body>
+    <header class="header">
+        <div class="contenedor contenido--header">
+            <h1>Rock & EDM Festival</h1>
+            <nav class="navegacion-principal">
+                <a href="#">Line Up</a>
+                <a href="#">Galeria</a>
+                <a href="#">Boletos</a>
+                
+            </nav>
+        </div>
+        
+    </header>
+    <div class="video">
+        <div class="overlay">
+            <div class="contenedor contenido--video">
+                <h2>Rock & EDM Festival</h2>
+                <p>Marzo 2023, Neuquen</p>
+            </div>
+        </div>
+        <video autoplay muted loop><!-- controls agrega los controles -->
+            <source src="video/concierto.mp4" type="video/mp4">
+            <source src="video/concierto.ogg" type="video/ogg">
+            <source src="video/concierto.webm" type="video/webm">
+        </video>
+    </div>
+    <section class="contenedor sobre-festival">
+        <div class="imagen">
+            <img src="src/img/imagen_vocalista.jpg" alt="Imagen vocalista festival">
+        </div>
+        <div class="contenido-festival">
+            <h2>Rock & EDM Festival</h2>
+            <p class="fecha">Marzo 2023, Neuquen</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptatum eveniet quos, sapiente praesentium adipisci. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel sequi dolorem id eaque vitae, doloremque natus voluptas unde.</p>
+        </div>
+    </section>
+    
 
 </body>
 </html>

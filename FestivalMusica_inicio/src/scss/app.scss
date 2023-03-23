@@ -1,0 +1,11 @@
+//forma antigua de importar, primero variables
+// @import 'base/variables';
+// @import 'contenido/contenido';
+
+
+//la nueva forma de importar, requiere un archivo index.scss en cada carpeta q contiene los arhchivos a importar
+@use 'base';
+@use 'layout';
+// @use 'ui';
+// @use 'contenido';
+

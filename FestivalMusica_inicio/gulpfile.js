@@ -13,16 +13,17 @@ const plumber=require('gulp-plumber');
 const autoprefixer=require('autoprefixer');
 const cssnano=require('cssnano');
 const postcss=require('gulp-postcss');
+const sourcemaps=require('gulp-sourcemaps');
 
 function css(done){
-    
-    
     // src('src/scss/app.scss')//identificar el archivo SASS
     // para que escucche todos
     src('src/scss/**/*.scss')//de forma recursiva busca todos los archivos dentro de la carpeta scss
+        .pipe(sourcemaps.init())
         .pipe(plumber())
         .pipe( sass() )//complilarlo
         .pipe(postcss([autoprefixer(), cssnano()]))
+        .pipe(sourcemaps.write('.'))//se le pone punto para que sea la misma ubicacion de la hoja de stilo css
         .pipe( dest('build/css') );//almacenar en el disco
 
 

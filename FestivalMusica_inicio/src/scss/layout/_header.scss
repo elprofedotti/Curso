@@ -4,27 +4,61 @@
 
 .header {
     background-color: v.$verde;
+    // @include m.tablet {
+        &.fijo{ //atento aca, va & prque en html es class='header fijo', fijo se le agrega al llegar al bottom, con JS
+            left: 0;
+            top: 0;
+            position: fixed;
+            width: 100%;
+            box-shadow: .1rem .2rem .3rem #333;
+        }    
+    // }
+    
     h1{
         color: v.$blanco;
         text-align: center;
-        @include m.tablet {
-            margin:0;    
-        }
+        margin:0;    
+        
         
     }
     .contenido--header {
-        padding:2rem;
+        padding:0rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 14rem;
+        
+        @include m.telefono {
+            height: 8rem;
+        }
+        .navegacion-principal-mq{
+            visibility: hidden;
+        }
+        .navegacion-principal{
+            visibility: visible;
+        }
         @include m.tablet {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding:2rem;
+            .navegacion-principal{
+                visibility: hidden;
+            }
+            .navegacion-principal-mq{
+                visibility: visible;
+            }
         }
     }
 }
-.navegacion-principal {
+.navegacion-principal{
+    h2{
+        color: v.$blanco;
+        margin: 0;
+    }
+}
+.navegacion-principal-mq {
     @include m.tablet {
         display: flex;
         gap:2rem;
+
     }
     a{
         display: block;

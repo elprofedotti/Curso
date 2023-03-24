@@ -5,10 +5,15 @@
 
 // exports.tarea = tarea;
 const {src, dest, watch, parallel} = require('gulp');
-const sass=require('gulp-sass')(require('sass'));
-const plumber=require('gulp-plumber');
+
 
 // CSS
+const sass=require('gulp-sass')(require('sass'));
+const plumber=require('gulp-plumber');
+const autoprefixer=require('autoprefixer');
+const cssnano=require('cssnano');
+const postcss=require('gulp-postcss');
+
 function css(done){
     
     
@@ -17,6 +22,7 @@ function css(done){
     src('src/scss/**/*.scss')//de forma recursiva busca todos los archivos dentro de la carpeta scss
         .pipe(plumber())
         .pipe( sass() )//complilarlo
+        .pipe(postcss([autoprefixer(), cssnano()]))
         .pipe( dest('build/css') );//almacenar en el disco
 
 

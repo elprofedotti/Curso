@@ -2,6 +2,18 @@
     .contenedor-anuncios{
         @include grid(3, 2rem);
     }
+    
+    .anuncio{    
+        .contenido-anuncio{
+            h3{
+            font-size: 1.7rem;
+            font-weight: $bold;
+            }
+            p{
+                font-size: 1.5rem;
+            }
+        }
+    }
 }
 
 .anuncio{
@@ -14,6 +26,13 @@
     }
     h3, p{
         margin: 0;
+        
+    }
+    h3{
+      font-size: 3rem;
+    }
+    p{
+        font-size: 2rem;
     }
     .precio{
         color: $verde;
